@@ -1,4 +1,5 @@
 # @hardikgarg2002/mongodb_utils
+![mongoDB_utils](https://socialify.git.ci/HardikGarg2002/mongoDB_utils/image?language=1&owner=1&name=1&stargazers=1&theme=Light)
 
 A utility package for managing MongoDB connections using Mongoose. This package provides functions to initialize, check, disconnect, and retry connections to MongoDB in a robust and efficient manner.
 
