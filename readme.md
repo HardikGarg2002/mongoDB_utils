@@ -8,37 +8,45 @@ Install the package via npm:
 
 ```bash
 npm install @hardikgarg2002/mongodb_utils
+```
+
+## ⚙️ Environment Variables
+
+Ensure the following environment variables are set in your `.env` file for optimal functionality:
+
+| Variable        | Description                                  | Required            | Default       |
+|-----------------|----------------------------------------------|----------|---------------|
+| `MONGO_URI`     | MongoDB connection URI                      | Yes      | N/A           |
+| `MONGO_DB_NAME` | Database name to connect to                 | No       | N/A (from URI)|
+| `MONGO_TIMEOUT` | MongoDB server selection timeout (in ms)    | No       | 15000         |
+| `MONGO_DEBUG`   | Enable debug mode to log MongoDB queries    | No       | `false`       |
 
 
-Environment Variables
-Ensure the following environment variables are set in your .env file:
+## 📚 Functions
 
-Variable	Description	Required	Default
-MONGO_URI	MongoDB connection URI	Yes	N/A
-MONGO_DB_NAME	Database name to connect to	No	N/A (Assumed in URI if not provided)
-MONGO_TIMEOUT	MongoDB server selection timeout (in ms)	No	15000
-MONGO_DEBUG	Enable debug mode to log MongoDB queries	No	false
-Functions
-initMongoDB()
+### `initMongoDB()`
+
 Initializes the MongoDB connection using Mongoose.
+- Logs connection success or error messages.
+- Enables Mongoose query debugging if `MONGO_DEBUG` is set to `true`.
 
-Logs connection success or error messages.
-Enables Mongoose query debugging if MONGO_DEBUG is set to true.
-Usage:
+#### Usage:
 
-javascript
-Copy code
+```javascript
 import { initMongoDB } from "@hardikgarg2002/mongodb_utils";
-
 await initMongoDB();
-isMongoDBConnected()
+```
+
+### `isMongoDBConnected()`
+
 Checks if the MongoDB connection is active.
 
 Returns true if connected, otherwise false.
-Usage:
 
-javascript
-Copy code
+
+#### Usage:
+
+```javascript
 import { isMongoDBConnected } from "@hardikgarg2002/mongodb_utils";
 
 if (isMongoDBConnected()) {
@@ -46,31 +54,30 @@ if (isMongoDBConnected()) {
 } else {
   console.log("Database is not connected");
 }
-disconnectMongoDB()
-Disconnects the MongoDB connection.
+```
 
-Logs a message upon successful disconnection.
+### `disconnectMongoDB()`
+- Disconnects the MongoDB connection.
+- Logs a message upon successful disconnection.
+
 Usage:
-
-javascript
-Copy code
+```javascript
 import { disconnectMongoDB } from "@hardikgarg2002/mongodb_utils";
-
 disconnectMongoDB();
-retryMongoDBConnection()
-Retries connecting to MongoDB if not already connected.
+```
+### retryMongoDBConnection()
+- Retries connecting to MongoDB if not already connected.
+- Logs the connection status and errors during the retry process.
 
-Logs the connection status and errors during the retry process.
 Usage:
 
-javascript
-Copy code
+```javascript
 import { retryMongoDBConnection } from "@hardikgarg2002/mongodb_utils";
-
 await retryMongoDBConnection();
-Example
-javascript
-Copy code
+```
+
+## 🛠️ Example
+```javascript
 import {
   initMongoDB,
   isMongoDBConnected,
@@ -90,10 +97,11 @@ import {
 
   disconnectMongoDB();
 })();
-License
+```
+## License 📄
 This package is licensed under the MIT License. See the LICENSE file for details.
 
-Author
-Hardik Garg
+## Author
+### Hardik Garg
 
 Feel free to contribute, suggest improvements, or report issues!
