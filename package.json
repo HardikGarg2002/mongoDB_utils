@@ -1,6 +1,6 @@
 {
   "name": "@hardikgarg2002/mongodb_utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility functions to manage connection with mongoDB database",
   "main": "index.js",
   "scripts": {
