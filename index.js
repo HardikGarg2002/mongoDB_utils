@@ -58,7 +58,7 @@ const retryMongoDBConnection = async () => {
   }
 };
 
-export {
+export default {
   initMongoDB,
   isMongoDBConnected,
   disconnectMongoDB,
